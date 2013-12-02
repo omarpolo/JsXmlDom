@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<USERS>
+	<USER>
+		<USERNAME>omarhu</USERNAME>
+		<FULLNAME>Omar Hukic</FULLNAME>
+		<EMAIL>omarhukic@gmail.com</EMAIL>
+		<PASSWORD>Columbia</PASSWORD>
+	</USER>
+	<USER>
+		<USERNAME>maxwell</USERNAME>
+		<FULLNAME>Mirna Hukic</FULLNAME>
+		<EMAIL>tdk@hotmail.nl</EMAIL>
+		<PASSWORD>CBS Records</PASSWORD>
+	</USER>
+	<USER>
+		<USERNAME>formulA1</USERNAME>
+		<FULLNAME>Mika Hakinen</FULLNAME>
+		<EMAIL>triBute@sphera.com</EMAIL>
+		<PASSWORD>RCA</PASSWORD>
+	</USER>
+	<USER>
+		<USERNAME>maserati</USERNAME>
+		<FULLNAME>Toto Kotunjo</FULLNAME>
+		<EMAIL>EU@United.com</EMAIL>
+		<PASSWORD>ecjo</PASSWORD>
+	</USER>
+	<USER>
+		<USERNAME>filipovix</USERNAME>
+		<FULLNAME>Mirko Filipovic</FULLNAME>
+		<EMAIL>K1@United.com</EMAIL>
+		<PASSWORD>knockout</PASSWORD>
+	</USER>
+	<USER>
+		<USERNAME>tyson</USERNAME>
+		<FULLNAME>Mike Tyson</FULLNAME>
+		<EMAIL>boX@United.com</EMAIL>
+		<PASSWORD>k1ck</PASSWORD>
+	</USER>
+	<USER>
+		<USERNAME>ad1das</USERNAME>
+		<FULLNAME>Franz Beckenbauer</FULLNAME>
+		<EMAIL>footbal@United.com</EMAIL>
+		<PASSWORD>g000l</PASSWORD>
+	</USER>
+	<USER>
+		<USERNAME>n1ke</USERNAME>
+		<FULLNAME>Max Paine</FULLNAME>
+		<EMAIL>athletics@United.com</EMAIL>
+		<PASSWORD>5pr1nt</PASSWORD>
+	</USER>
+	<USER>
+		<USERNAME>reebook</USERNAME>
+		<FULLNAME>Arnold Schwarzeneger</FULLNAME>
+		<EMAIL>bbuilding@United.com</EMAIL>
+		<PASSWORD>port</PASSWORD>
+	</USER>	
+	<USER>
+		<USERNAME>sandala</USERNAME>
+		<FULLNAME>Marin Drzic</FULLNAME>
+		<EMAIL>dubrovnik@United.com</EMAIL>
+		<PASSWORD>kolo</PASSWORD>
+	</USER>	
+	<USER>
+		<USERNAME>papucha</USERNAME>
+		<FULLNAME>Paja Patak</FULLNAME>
+		<EMAIL>Disney@United.com</EMAIL>
+		<PASSWORD>crtani</PASSWORD>
+	</USER>	
+		<USER>
+		<USERNAME>g3p3to</USERNAME>
+		<FULLNAME>Deny Key</FULLNAME>
+		<EMAIL>WB@United.com</EMAIL>
+		<PASSWORD>m0v1e</PASSWORD>
+	</USER>	
+</USERS>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+		a { color: #0068D2; cursor: pointer; }
+		a:link, a:visited { text-decoration: none; color: #0068D2; }
+		a:hover, a:active { text-decoration: underline; color: #0068D2; }
+		body { font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", sans-serif; padding: 10px;}
+		#body-div 	{ background-color:#e1e1e1; padding: 2px; border: 0px ;margin: 0px 0; width:auto;}
+		#naslov { padding: 10px 20px;font-weight: bold; color: #fff; background-color: #7ca0c7; background: -moz-linear-gradient(#acc6e1, #7ca0c7); background: -webkit-gradient(linear, 0 20%, 0 100%, from(#acc6e1), to(#7ca0c7)); border-color: #5b80b2; }
+
+		#details { padding: 10px 20px;font-weight: bold; color: #fff; background-color: #7ca0c7; background: -moz-linear-gradient(#acc6e1, #7ca0c7); background: -webkit-gradient(linear, 0 20%, 0 100%, from(#acc6e1), to(#7ca0c7)); border-color: #5b80b2; }
+		
+		#contacts-table { border-collapse: collapse;}
+		#contacts-head{ padding: 20px 20px;font-weight: bold; color:#FFFFFF; background-color: #7ca0c7; background: -moz-linear-gradient(#acc6e1, #7ca0c7); background: -webkit-gradient(linear, 0 20%, 0 100%, from(#acc6e1), to(#7ca0c7)); border-color: #5b80b2; width:auto;}
+		#contacts-table, #contacts-table th, #contacts-table td { padding: 8px 16px; text-align: left; border: 0px solid #B9BABE; }
+		#contacts-table th { font-weight: bold; font-size: 14px; color:#FFFFFF; }
+		#contacts-table td { color: #000;}
+		
+		#contacts-table tr:nth-child(2n) { background: #E8EDFF; }
+		#contacts-table	tr:hover { background-color:#BBDDFF ;}
+
+
+
+		#contacts-form { padding: 10px 0px; background-color:#fdfdfd  ;background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#e1e1e1)); }
+		.text input, .button input { padding: 5px; margin: 0; border: 1px solid #ccc; -moz-border-radius: 2px; -webkit-border-radius: 2px; 			 border-radius: 2px; }
+		#contacts-form .item { margin: 3px 0; }
+		#contacts-form label, #contacts-form .field { display: inline-block; color: #0C0B07; }
+		#contacts-form label { width: 110px; font-weight: bold; text-align: right; color: #666; }
+		#contacts-form .text input { width: 176px; padding: 3px; }
+		#contacts-form  textarea { width: 566px; padding: 5px; }
+		#contacts-form .button { display: inline-block; }
+		#contacts-form .button-wrapper { padding-left: 113px; }
+		.button input { padding: 4px 8px; color: #343434; background-color: #fdfdfd; background: -moz-linear-gradient(#fdfdfd, #e1e1e1); background: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#e1e1e1)); }
+		.button-default input { font-weight: bold; color: #fff; background-color: #7ca0c7; background: -moz-linear-gradient(#acc6e1, #7ca0c7); background: -webkit-gradient(linear, 0 0, 0 100%, from(#acc6e1), to(#7ca0c7)); border-color: #5b80b2; }
+	
+</style>
+<script>
+
+/*
+//#################### verzija 1
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","usersi.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+var x=xmlDoc.getElementsByTagName("USER");
+
+
+i=0;
+
+function displaydetails(i)
+{
+	username=(x[i].getElementsByTagName("USERNAME")[0].childNodes[0].nodeValue);
+	fullname=(x[i].getElementsByTagName("FULLNAME")[0].childNodes[0].nodeValue);
+	email=(x[i].getElementsByTagName("EMAIL")[0].childNodes[0].nodeValue);
+	password=(x[i].getElementsByTagName("PASSWORD")[0].childNodes[0].nodeValue);
+	txt="FULLNAME: "+fullname+"<br>USERNAME: "+username+"<br>EMAIL: "+email+"<br>PASSWORD: "+password;
+	document.getElementById("details").innerHTML=txt;
+}*/
+
+</script>
+
+
+<script>
+
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.open("GET","usersi.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+var x=xmlDoc.getElementsByTagName("USER");
+
+function displaydetails(i)
+{
+
+	username=(x[i].getElementsByTagName("USERNAME")[0].childNodes[0].nodeValue);
+	fullname=(x[i].getElementsByTagName("FULLNAME")[0].childNodes[0].nodeValue);
+	email=(x[i].getElementsByTagName("EMAIL")[0].childNodes[0].nodeValue);
+	password=(x[i].getElementsByTagName("PASSWORD")[0].childNodes[0].nodeValue);
+	txt="USER DETAILS<br>FULLNAME: "+fullname+"<br>USERNAME: "+username+"<br>EMAIL: "+email+"<br>PASSWORD: "+password;
+	document.getElementById("details").innerHTML=txt;
+}
+
+var start=0;
+function generateTables(start){
+/*		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.open("GET","usersi.xml",false);
+		xmlhttp.send();
+		xmlDoc=xmlhttp.responseXML; 
+		var x=xmlDoc.getElementsByTagName("USER");*/
+		
+		
+		//------------------------------------------
+		displaydetails(start);
+		var content = document.getElementById('content');
+		//var x=xmlDoc.getElementsByTagName("vids");
+		var xmlContent = "<div id='naslov'><h1 > JS DOM XML </h1></div>";
+		xmlContent += "<div id='body-div'>";
+		xmlContent += "<form id='contacts-form'>";
+		xmlContent += "<table class='table' id='contacts-table'>";
+		xmlContent += "<tr id='contacts-head'>" +
+						"<th>Username</th>"+
+						"<th>Full name</th>"+
+						"<th>Email</th>"+
+						"<th>Password</th>"+
+        				"</tr>";
+		var columns =5;
+		var count = 0;
+		var z = 0;
+		var rows = 5;
+		
+
+		var totalContent = x.length;//recordcount   
+		var noPerPage = rows//Ukupan broj redova    
+		var noOfPage = 0;//Broj stranica
+		
+		if(totalContent%noPerPage == 0) {
+			noOfPage = Math.floor(totalContent/noPerPage);
+		}
+		else {
+			noOfPage = Math.floor((totalContent/noPerPage)+1);
+		}
+
+
+		if(totalContent < noPerPage) {
+			if(totalContent%columns == 0) {
+				rows = Math.floor(totalContent/columns);
+			}
+			else {
+				rows = Math.floor((totalContent/columns)+1);
+			}
+			noOfPage = 1;
+		}
+		
+		var whichPage = (start/noPerPage)+1;//broj trenutne stranice
+		
+		var pagination = 5;//
+		var midPagination = Math.floor(pagination / 2);
+		var html = ""
+		var rc = x.length-1;
+		for (i=0;i<rows;i++) {		
+			
+			if (start == rc )
+			{
+				break;
+			}
+			var username = x[start].getElementsByTagName("USERNAME")[0].childNodes[0].nodeValue;
+			var fullname = x[start].getElementsByTagName("FULLNAME")[0].childNodes[0].nodeValue;
+			var email = x[start].getElementsByTagName("EMAIL")[0].childNodes[0].nodeValue;
+			var password = x[start].getElementsByTagName("PASSWORD")[0].childNodes[0].nodeValue;
+			xmlContent += "<tr onclick='displaydetails("+start+")'>";
+			xmlContent += "<td >" + username + "</td>"; 
+			xmlContent += "<td >" + fullname + "</td>";
+			xmlContent += "<td >" + email + "</td>";
+			xmlContent += "<td >" + password + "</td>";         
+			xmlContent += "</tr>";
+			start++;
+
+			}
+		
+			xmlContent += "<tr>";
+			xmlContent += "<td colspan='"+columns+"' align='center'>";
+		
+		
+		xmlContent += "</td>";
+		xmlContent += "</tr>";		
+		xmlContent += "</table>";
+
+
+
+		xmlContent += "<table>";
+		xmlContent += "<r>";				
+		xmlContent += "<td>";		
+		// pravi < i >
+		if(whichPage > pagination) {
+				xmlContent += "<a onclick='generateTables("+noPerPage*(whichPage-1-pagination)+")' style='cursor:pointer'><<</a> ";
+			}
+			if(whichPage > 1) {
+				xmlContent += "<a onclick='generateTables("+noPerPage*(whichPage-1-1)+")' style='cursor:pointer'><</a> ";
+			}
+		
+		//generiranje brojeva stranica
+		var fno = whichPage - midPagination;
+		var lno = whichPage + midPagination;
+		
+		if(fno < 1 &&  noOfPage > pagination) {
+		   fno = 1;
+		   lno = pagination;
+		}
+		else if(fno < 1 && noOfPage <= pagination) {
+		  fno = 1;
+		  lno = noOfPage;
+		}
+		else if(lno > noOfPage && noOfPage <= pagination) {
+		fno = 1;
+				lno = noOfPage;       
+			}
+		else if(lno > noOfPage && noOfPage > pagination) {
+		  lno = noOfPage;
+		  fno = (lno - pagination) + 1;
+		}
+		
+		//formiranje brojeva stranica
+		for(var k=fno;k<=lno;k++) {
+			if(whichPage == k) {
+				xmlContent += "<b>"+k+"</b> ";
+			}
+			else {
+				xmlContent += "<a onclick='generateTables("+noPerPage*(k-1)+")' style='cursor:pointer'>"+k+"</a> ";
+			}
+		}
+
+		
+		if(whichPage < noOfPage) {
+			xmlContent += "<a onclick='generateTables("+noPerPage*(whichPage-1+1)+")' style='cursor:pointer'>></a> ";
+		}
+		if(whichPage <= (noOfPage - pagination)) {
+			xmlContent += "<a onclick='generateTables("+noPerPage*(whichPage-1+pagination)+");' style='cursor:pointer'>>></a>";
+		}
+		
+		xmlContent += "</td>";
+		xmlContent += "</tr>";
+		
+		xmlContent += "</table>";
+		xmlContent +=  "</form>";
+		xmlContent +=  "</div>";
+		document.getElementById("content").innerHTML=xmlContent;
+		
+}
+</script>
+
+</head>
+
+<body onLoad="">
+
+<div id="content"></div>
+<div id='details'>detalji</div><br>
+
+<script type="text/javascript">
+window.onload = function() {
+   generateTables(0);
+   displaydetails(0);
+};
+</script>
+</body>
+</html>
+
